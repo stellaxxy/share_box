@@ -1,5 +1,9 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const env = process.env.NODE_ENV;
 
 module.exports = {
     output: {
@@ -17,7 +21,23 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader'
+                use: env === 'production'
+                    ? ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use: ['css-loader']
+                    })
+                    : ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    env !== 'production'
+                        ? 'style-loader'
+                        : MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'resolve-url-loader',
+                    'sass-loader'
+                ]
             },
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
@@ -34,5 +54,32 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            inject: false,
+            template: require('html-webpack-template'),
+            appMountId: 'root',
+            meta: [
+                // EXAMPLE:
+                // {
+                //     name: '',
+                //     content: ''
+                // }
+            ],
+            mobile: true,
+            lang: 'en-us',
+            links: [
+                {
+                    href: '/react_icon.png',
+                    rel: 'icon'
+                },
+                {
+                    href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+                    rel: 'stylesheet'
+                }
+            ],
+            title: 'React Starter with SASS'
+        })
+    ]
 };
