@@ -19,10 +19,10 @@ module.exports = merge(common, {
         new CleanWebpackPlugin([
             'dist'
         ],
-            {
-                root: resolve(__dirname),
-                exclude: ['react_icon.png']
-            }),
+        {
+            root: resolve(__dirname),
+            exclude: ['react_icon.png']
+        }),
         new UglifyJsPlugin({
             sourceMap: true
         }),
