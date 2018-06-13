@@ -33,7 +33,7 @@ module.exports = {
                     env !== 'production'
                         ? 'style-loader'
                         : MiniCssExtractPlugin.loader,
-                    'css-loader',
+                    'css-loader?minimize',
                     'resolve-url-loader',
                     'sass-loader'
                 ]
