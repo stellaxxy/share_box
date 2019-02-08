@@ -1,13 +1,15 @@
 import React from 'react';
+import Greeting from './greeting';
+import Clock from './clock';
+import Modal from './modal';
 import '../assets/css/app.scss';
-import logo from '../assets/images/logo.svg';
+
 
 const App = () => (
     <div>
-        <div className="app">
-            <img src={logo} className="logo rotate"/>
-            <h1>Welcome To React</h1>
-        </div>
+        <Greeting name="Jim Bob"/>
+        <Clock/>
+        <Modal/>
     </div>
 );
 
