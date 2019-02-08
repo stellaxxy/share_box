@@ -3,7 +3,7 @@
 import React from 'react';
 
 function Greeting(props){
-   // console.log('Greeting Props: ', props);
+   console.log('Greeting Props: ', props);
 
     // let name = props.name;
     /*
