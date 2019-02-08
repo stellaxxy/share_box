@@ -17,11 +17,12 @@ function fullName(user){
 //as soon as you are inside of the jsx tag, everything inside is treated as strings
 //{} jsx js expression - everything inside is doing js now
 const greeting = <h1>Hello {fullName(user)}, Welcome to our Site</h1>;
-//put it in the () when there is multiple lines
+
 //you cannot return 2 jsx at one time
-// just like you cannot store 2 object in one variable or return 2 objects in one fucntion
+// just like you cannot store 2 object in one variable or return 2 objects in one function
 //have to return one single root element
 // props - basically attributes in html
+//put it in the () when there is multiple lines
 const list = (
     <div>
         <h1>Grocery List</h1>
