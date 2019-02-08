@@ -1,42 +1,25 @@
-@font-face {
-    font-family: rustic;
-    src: url(../fonts/rustic.ttf);
-}
-
 body {
-    margin: 0;
-
-    .app {
-        background-color: #000;
-        color: #FFF;
-        font-family: rustic;
-        font-size: 30px;
-        padding: 50px;
-        text-align: center;
-
-        .logo {
-            height: 175px;
-        }
-
-        .rotate {
-            animation: spin 10s linear infinite;
-        }
-
-        h1 {
-            color: #61DAFB;
-            font-size: 4em;
-            font-weight: normal;
-            letter-spacing: 2px;
-            margin: 0.16em;
-        }
-    }
+    padding-top: 60px;
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
+.main-header {
+    font-size: 4em;
+    color: rebeccapurple;
+    text-align: center;
+}
+
+.main-nav {
+    background-color: blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    ul {
+        li {
+            display: inline-block;
+            color: white;
+            padding: 5px 15px;
+        }
     }
 }
