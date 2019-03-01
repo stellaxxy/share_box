@@ -8,6 +8,7 @@
 
 import { combineReducers } from 'redux';
 import clockReducer from './clock_reducer';
+import themeReducer from './theme_reducer';
 
 //this is like templating your state object
 /*
@@ -18,13 +19,13 @@ essentially blueprint your state here
             currentTime: '1:23:00 PM'
        },
        theme: {
-            main: 'blue',
-            accent: 'yellow'
+            textColor: 'yellow'
        }
     }
     */
 const rootReducer = combineReducers({
-    clock: clockReducer
+    clock: clockReducer,
+    theme: themeReducer
 });
 
 export default rootReducer;
